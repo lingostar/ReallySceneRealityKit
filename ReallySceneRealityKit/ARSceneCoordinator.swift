@@ -17,6 +17,12 @@ final class ARSceneCoordinator: NSObject, ARSessionDelegate {
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
             config.sceneReconstruction = .mesh
         }
+        // People Occlusion (사람이 가상 객체를 가림). A12 이상 필요.
+        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+            config.frameSemantics.insert(.personSegmentationWithDepth)
+        } else if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentation) {
+            config.frameSemantics.insert(.personSegmentation)
+        }
         arView.session.delegate = self
         arView.session.run(config, options: [.resetTracking, .removeExistingAnchors])
 
