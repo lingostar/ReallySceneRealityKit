@@ -6,28 +6,54 @@ final class ARSceneCoordinator: NSObject, ARSessionDelegate {
 
     weak var arView: ARView?
     private var visualizer: PlaneVisualizer?
+    private let configuration = ARWorldTrackingConfiguration()
+    private var peopleOcclusionEnabled = false
 
-    func install(on arView: ARView) {
+    /// People Occlusion 지원 여부 (앱 UI 가 토글을 비활성화할지 결정할 때 사용)
+    static var supportsPeopleOcclusion: Bool {
+        ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentation)
+    }
+
+    func install(on arView: ARView, peopleOcclusion: Bool) {
         self.arView = arView
         self.visualizer = PlaneVisualizer(arView: arView)
 
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        config.environmentTexturing = .automatic
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.environmentTexturing = .automatic
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-            config.sceneReconstruction = .mesh
+            configuration.sceneReconstruction = .mesh
         }
-        // People Occlusion (사람이 가상 객체를 가림). A12 이상 필요.
-        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
-            config.frameSemantics.insert(.personSegmentationWithDepth)
-        } else if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentation) {
-            config.frameSemantics.insert(.personSegmentation)
-        }
+        applyPeopleOcclusion(peopleOcclusion, runSession: false)
+
         arView.session.delegate = self
-        arView.session.run(config, options: [.resetTracking, .removeExistingAnchors])
+        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         arView.addGestureRecognizer(tap)
+    }
+
+    /// SwiftUI 의 토글이 변경될 때 호출. 같은 값으로 들어오면 no-op.
+    func setPeopleOcclusion(_ enabled: Bool) {
+        guard enabled != peopleOcclusionEnabled else { return }
+        applyPeopleOcclusion(enabled, runSession: true)
+    }
+
+    private func applyPeopleOcclusion(_ enabled: Bool, runSession: Bool) {
+        peopleOcclusionEnabled = enabled
+        if enabled {
+            // depth 가 가능하면 그쪽이 깊이 기반 가림(앞/뒤 둘 다)을 지원
+            if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+                configuration.frameSemantics.insert(.personSegmentationWithDepth)
+            } else if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentation) {
+                configuration.frameSemantics.insert(.personSegmentation)
+            }
+        } else {
+            configuration.frameSemantics.remove(.personSegmentationWithDepth)
+            configuration.frameSemantics.remove(.personSegmentation)
+        }
+        if runSession {
+            arView?.session.run(configuration)  // reset 없이 의미체계만 갱신
+        }
     }
 
     // MARK: - ARSessionDelegate
