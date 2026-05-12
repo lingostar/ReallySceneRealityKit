@@ -12,8 +12,10 @@
 		2A5828CC93F3A2CDCF32AC6C /* PlaneVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */; };
 		2C1F3D8AB5250993F6744074 /* ARSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982C0C662B125F95B3B9B2 /* ARSceneCoordinator.swift */; };
 		58F9BE92C388091CD8DDB8C3 /* ReallySceneRealityKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */; };
+		6E7ED695621847401885CE29 /* SteamSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729816A6BD3D13B49B9FB9FF /* SteamSystem.swift */; };
 		732E3666EB7E371229E1C137 /* PictureFrame.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 16437DE79BFDBF4AC6D806D6 /* PictureFrame.usdz */; };
 		74469B6DDFAE857BA3A6FD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC44AD671D06F060804225 /* Assets.xcassets */; };
+		B6074F98AAE19D6146EE8B5A /* SwaySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7FC49514FFCD2D13084A4 /* SwaySystem.swift */; };
 		C760DC76E843AA011340F96F /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A504B5E2B89F632D428FA3 /* ARSceneView.swift */; };
 		CB87D9A87087ACC0CB3C59B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341FB69E6A127A594784AAA3 /* ContentView.swift */; };
 		FDC3231E0E9B75353D444BC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A1597EA51E772DEFA131BD /* Preview Assets.xcassets */; };
@@ -27,8 +29,10 @@
 		4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneVisualizer.swift; sourceTree = "<group>"; };
 		4FDC44AD671D06F060804225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62A504B5E2B89F632D428FA3 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
+		729816A6BD3D13B49B9FB9FF /* SteamSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamSystem.swift; sourceTree = "<group>"; };
 		7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallySceneRealityKitApp.swift; sourceTree = "<group>"; };
 		9B054EA7D8713FB91862CF2A /* ReallySceneRealityKit.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReallySceneRealityKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B7FC49514FFCD2D13084A4 /* SwaySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwaySystem.swift; sourceTree = "<group>"; };
 		B8A1597EA51E772DEFA131BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5982C0C662B125F95B3B9B2 /* ARSceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +48,8 @@
 				36BF09BCCA1EDFAF2136E002 /* GridTexture.swift */,
 				4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */,
 				7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */,
+				729816A6BD3D13B49B9FB9FF /* SteamSystem.swift */,
+				A0B7FC49514FFCD2D13084A4 /* SwaySystem.swift */,
 				D6B5E6A31ED1F2E2E7E874C8 /* Models */,
 				5EEF9461102A9721D1E645E7 /* Preview Content */,
 			);
@@ -163,6 +169,8 @@
 				1257316CBC7169D81498F88B /* GridTexture.swift in Sources */,
 				2A5828CC93F3A2CDCF32AC6C /* PlaneVisualizer.swift in Sources */,
 				58F9BE92C388091CD8DDB8C3 /* ReallySceneRealityKitApp.swift in Sources */,
+				6E7ED695621847401885CE29 /* SteamSystem.swift in Sources */,
+				B6074F98AAE19D6146EE8B5A /* SwaySystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

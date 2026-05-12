@@ -94,22 +94,51 @@ final class ARSceneCoordinator: NSObject, ARSessionDelegate {
         let isHorizontal = alignment == .horizontal
 
         let modelName = isHorizontal ? "CoffeeCup" : "PictureFrame"
-        guard let model = try? Entity.load(named: modelName) else {
+        guard let usdz = try? Entity.load(named: modelName) else {
             assertionFailure("USDZ 로드 실패: \(modelName)")
             return
         }
 
-        // 벽면(수직 평면)에 액자를 걸 때 모델 좌표(+Z=정면, +Y=위)를
-        // ARKit 평면 좌표(+Y=노말, -Z=중력 반대)로 정렬: -90° around X.
+        // installGestures 는 HasCollision 엔티티를 요구하므로 ModelEntity 래퍼에 담는다.
+        let interactive = ModelEntity()
+        interactive.name = isHorizontal ? "CoffeeCupRoot" : "PictureFrameRoot"
+        interactive.addChild(usdz)
+
+        // 벽면(수직 평면): 모델(+Z=정면, +Y=위)을 ARKit 평면(+Y=노말, -Z=중력 반대)에 맞춤
         if !isHorizontal {
-            model.transform.rotation = simd_quatf(
+            interactive.transform.rotation = simd_quatf(
                 angle: -.pi / 2,
                 axis: SIMD3<Float>(1, 0, 0)
             )
         }
 
+        // 콜리전 — visualBounds 기반의 박스 셰이프 (제스처 hit-test 에 사용)
+        let bounds = interactive.visualBounds(
+            recursive: true,
+            relativeTo: interactive,
+            excludeInactive: false
+        )
+        let collisionShape = ShapeResource
+            .generateBox(size: bounds.extents)
+            .offsetBy(translation: bounds.center)
+        interactive.components.set(CollisionComponent(shapes: [collisionShape]))
+
+        // ECS — 컵 위에는 김, 액자에는 가벼운 흔들림
+        if isHorizontal {
+            interactive.components.set(SteamEmitterComponent(
+                spawnOffset: SIMD3<Float>(0, bounds.max.y - 0.005, 0)
+            ))
+        } else {
+            interactive.components.set(SwayComponent(basis: interactive.transform.rotation))
+        }
+
+        // 씬에 부착
         let placement = AnchorEntity(world: result.worldTransform)
-        placement.addChild(model)
+        placement.addChild(interactive)
         arView.scene.addAnchor(placement)
+
+        // 제스처: 컵은 옮기고 돌리기, 액자는 옮기기만(회전은 sway 와 충돌)
+        let gestures: ARView.EntityGestures = isHorizontal ? [.translation, .rotation] : [.translation]
+        arView.installGestures(gestures, for: interactive)
     }
 }
