@@ -7,36 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06AD82842501A49E0F712AF8 /* CoffeeCup.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 13F6489724F3E3B04730D518 /* CoffeeCup.usdz */; };
+		1257316CBC7169D81498F88B /* GridTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF09BCCA1EDFAF2136E002 /* GridTexture.swift */; };
+		2A5828CC93F3A2CDCF32AC6C /* PlaneVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */; };
+		2C1F3D8AB5250993F6744074 /* ARSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982C0C662B125F95B3B9B2 /* ARSceneCoordinator.swift */; };
 		58F9BE92C388091CD8DDB8C3 /* ReallySceneRealityKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */; };
+		732E3666EB7E371229E1C137 /* PictureFrame.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 16437DE79BFDBF4AC6D806D6 /* PictureFrame.usdz */; };
 		74469B6DDFAE857BA3A6FD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC44AD671D06F060804225 /* Assets.xcassets */; };
-		B3A373EBB9C7BBAE0247CBDB /* FurnaceSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA96B0F202F465C34DD0928C /* FurnaceSphere.swift */; };
+		C760DC76E843AA011340F96F /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A504B5E2B89F632D428FA3 /* ARSceneView.swift */; };
 		CB87D9A87087ACC0CB3C59B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341FB69E6A127A594784AAA3 /* ContentView.swift */; };
-		DF5FCF8852B8D3AC653F3F07 /* FurnaceSphereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038687696A6F6464FE42EBE4 /* FurnaceSphereView.swift */; };
-		FB6B0380B06D4246C33F780C /* EmberMaterialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E9E7A89F3BF2E167B63CA /* EmberMaterialSystem.swift */; };
 		FDC3231E0E9B75353D444BC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A1597EA51E772DEFA131BD /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		038687696A6F6464FE42EBE4 /* FurnaceSphereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnaceSphereView.swift; sourceTree = "<group>"; };
+		13F6489724F3E3B04730D518 /* CoffeeCup.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = CoffeeCup.usdz; sourceTree = "<group>"; };
+		16437DE79BFDBF4AC6D806D6 /* PictureFrame.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = PictureFrame.usdz; sourceTree = "<group>"; };
 		341FB69E6A127A594784AAA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		36BF09BCCA1EDFAF2136E002 /* GridTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTexture.swift; sourceTree = "<group>"; };
+		4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneVisualizer.swift; sourceTree = "<group>"; };
 		4FDC44AD671D06F060804225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		62A504B5E2B89F632D428FA3 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
 		7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallySceneRealityKitApp.swift; sourceTree = "<group>"; };
-		929E9E7A89F3BF2E167B63CA /* EmberMaterialSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmberMaterialSystem.swift; sourceTree = "<group>"; };
 		9B054EA7D8713FB91862CF2A /* ReallySceneRealityKit.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReallySceneRealityKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A1597EA51E772DEFA131BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CA96B0F202F465C34DD0928C /* FurnaceSphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnaceSphere.swift; sourceTree = "<group>"; };
+		D5982C0C662B125F95B3B9B2 /* ARSceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		2FF579357A4E7D5EE7553EAA /* ReallySceneRealityKit */ = {
 			isa = PBXGroup;
 			children = (
+				D5982C0C662B125F95B3B9B2 /* ARSceneCoordinator.swift */,
+				62A504B5E2B89F632D428FA3 /* ARSceneView.swift */,
 				4FDC44AD671D06F060804225 /* Assets.xcassets */,
 				341FB69E6A127A594784AAA3 /* ContentView.swift */,
-				929E9E7A89F3BF2E167B63CA /* EmberMaterialSystem.swift */,
-				CA96B0F202F465C34DD0928C /* FurnaceSphere.swift */,
-				038687696A6F6464FE42EBE4 /* FurnaceSphereView.swift */,
+				36BF09BCCA1EDFAF2136E002 /* GridTexture.swift */,
+				4CB1F48DC7D4C61A3AF8C349 /* PlaneVisualizer.swift */,
 				7DA0DD545A4F221E87C323E9 /* ReallySceneRealityKitApp.swift */,
+				D6B5E6A31ED1F2E2E7E874C8 /* Models */,
 				5EEF9461102A9721D1E645E7 /* Preview Content */,
 			);
 			path = ReallySceneRealityKit;
@@ -64,6 +72,15 @@
 				9B054EA7D8713FB91862CF2A /* ReallySceneRealityKit.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D6B5E6A31ED1F2E2E7E874C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13F6489724F3E3B04730D518 /* CoffeeCup.usdz */,
+				16437DE79BFDBF4AC6D806D6 /* PictureFrame.usdz */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				74469B6DDFAE857BA3A6FD68 /* Assets.xcassets in Resources */,
+				06AD82842501A49E0F712AF8 /* CoffeeCup.usdz in Resources */,
+				732E3666EB7E371229E1C137 /* PictureFrame.usdz in Resources */,
 				FDC3231E0E9B75353D444BC9 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,10 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1F3D8AB5250993F6744074 /* ARSceneCoordinator.swift in Sources */,
+				C760DC76E843AA011340F96F /* ARSceneView.swift in Sources */,
 				CB87D9A87087ACC0CB3C59B3 /* ContentView.swift in Sources */,
-				FB6B0380B06D4246C33F780C /* EmberMaterialSystem.swift in Sources */,
-				B3A373EBB9C7BBAE0247CBDB /* FurnaceSphere.swift in Sources */,
-				DF5FCF8852B8D3AC653F3F07 /* FurnaceSphereView.swift in Sources */,
+				1257316CBC7169D81498F88B /* GridTexture.swift in Sources */,
+				2A5828CC93F3A2CDCF32AC6C /* PlaneVisualizer.swift in Sources */,
 				58F9BE92C388091CD8DDB8C3 /* ReallySceneRealityKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,9 +305,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReallySceneRealityKit/Preview Content\"";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR 카메라로 주변 공간을 인식하기 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,9 +334,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReallySceneRealityKit/Preview Content\"";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR 카메라로 주변 공간을 인식하기 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
